@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ChuckJokesVue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <style>
+        body {
+            font-family: sans-serif;
+            color: #333;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        li:hover {
+            background: #fff;
+            border-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <h1>Chuck Norris Facts</h1>
+        
+        <ul>
+            <li v-for="(item, index) in chuck" :key="index">
+                {{ item.value }}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    chuck: [ 
+                        { "value": "Chuck Norris can skydive into outer space." }, 
+                        { "value": "The chief export of Chuck Norris is pain." }, 
+                        { "value": "Chuck Norris doesn't read books. He stares them down until he gets the information he wants." }, 
+                        { "value": "Time waits for no man. Unless that man is Chuck Norris." }, 
+                        { "value": "If you spell Chuck Norris in Scrabble, you win. Forever." }
+                    ]
+                }
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+</html>
